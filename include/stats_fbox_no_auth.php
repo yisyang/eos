@@ -1,0 +1,1 @@
+		<div id="eos_body_fbox">

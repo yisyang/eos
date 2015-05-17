@@ -1,0 +1,16 @@
+AddDefaultCharset utf-8
+
+# SEARCH ENGINE FRIENDLY URLS
+Options +FollowSymlinks
+RewriteEngine On
+RewriteRule ^firm/([0-9]+) /eos/firms/firms.php?firm_id=$1 [L]
+RewriteRule ^firm/([A-Za-z0-9_-]+) /eos/firms/firms.php?firm_alias=$1 [L]
+RewriteRule ^player/([0-9]+) /eos/players/players.php?player_id=$1 [L]
+RewriteRule ^player/([A-Za-z0-9_-]+) /eos/players/players.php?player_alias=$1 [L]
+
+ErrorDocument 404 http://www.example.com/eos/404.php
+
+<FilesMatch "^\.ht">
+    Order allow,deny
+    Deny from all
+</FilesMatch>

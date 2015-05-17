@@ -1,0 +1,1 @@
+ErrorDocument 403 http://www.example.com/eos/404.php

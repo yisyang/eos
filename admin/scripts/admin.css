@@ -1,0 +1,186 @@
+a.info{
+    position:relative;
+    text-decoration:none
+}
+a.info span{display:none;}
+a.info:hover span{
+    display:block;
+    position:absolute;
+    top:2em; left:0; width:15em;
+	padding:1em;
+    border:1px solid #88bbff;
+    background-color:#ffffff; color:#000000;
+	font-family:'Lucida Grande', Verdana, Arial, sans-serif;
+	font-size:12px;
+	font-weight:normal;
+	z-index:9999;
+}
+a.info:focus{outline:none;}
+body{
+	background-color: #707088;
+	font-family: 'Lucida Grande', Verdana, Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+h1 a{
+	text-decoration: none;
+	color: #3b5998;
+}
+h1 a:hover{
+	text-decoration: underline;
+}
+#eos_wrapper{
+	background-color: #ffffff;
+	width: 1180px;
+	margin: 0 auto;
+	-moz-box-shadow: 0px 0px 10px #000000;
+	-webkit-box-shadow: 0px 0px 10px #000000;
+	box-shadow: 0px 0px 10px #000000;
+}
+#eos_wrapper_nomenu{
+	background-color: #ffffff;
+	width: 100%;
+}
+#eos_header{
+	background-color: #88aadd;
+	height: 64px;
+	margin: 0;
+	padding: 0;
+}
+#eos_header img{
+	border: 0;
+}
+#eos_main{
+	float: left;
+	width: 1180px;
+	min-height: 680px;
+	background-color: #faf8e1;
+	background-image: url('/eos/images/parchment1.jpg');
+	background-repeat: repeat-y;
+	border-top: 1px solid #666666;
+	border-bottom: 1px solid #666666;
+}
+#eos_main_nomenu{
+	width: 100%;
+	min-height: 680px;
+	background-color: #faf8e1;
+	border-top: 1px solid #666666;
+	border-bottom: 1px solid #666666;
+}
+#eos_stats_panel{
+	float: left;
+	width: 144px;
+	padding: 12px 24px 12px 12px;
+	font-size: 12px;
+	color: #334488;
+	line-height: 150%;
+}
+#eos_stats_panel a{
+	font-size: 14px;
+	color: #3333ff;
+	text-decoration: none;
+}
+#eos_stats_panel a:hover{
+	color: #ff3333;
+}
+#eos_body{
+	float: left;
+	width: 950px;
+	padding: 0px 25px;
+	font-size: 14px;
+	line-height: 135%;
+}
+#eos_body a{
+	font-size: 14px;
+	color: #3333ff;
+	text-decoration: none;
+}
+#eos_body a:hover{
+	color: #ff3333;
+}
+#eos_body_nomenu{
+	font-size: 14px;
+	line-height: 135%;
+}
+#eos_body_nomenu a{
+	font-size: 14px;
+	color: #3333ff;
+	text-decoration: none;
+}
+#eos_body_nomenu a:hover{
+	color: #ff3333;
+}
+#footer{
+	clear: both;
+	background-color: #88aadd;
+	height: 20px;
+	padding: 4px 0 4px 10px;
+	font-size: 14px;
+	color: #ffffff;
+}
+.edit_table{
+	margin: 6px 0;
+	border-collapse:collapse;
+}
+.edit_table td{
+	padding: 3px 6px;
+	border: 1px solid #888888;
+	text-align: center;
+}
+.edit_table thead{
+	background-color: #FFFFF8;
+}
+.edit_table tbody{
+	background-color: #F8F8F0;
+}
+.edit_table tfoot{
+	background-color: #F8F8F0;
+}
+.edit_table.smallfont{
+	margin: 0;
+	border-collapse:collapse;
+}
+.edit_table.smallfont td{
+	padding: 3px 2px;
+	font-size: 10px;
+}
+.link_w{
+	color: #ffffff;
+	text-decoration: none;
+}
+.link_g{
+	color: #808080;
+	text-decoration: none;
+}
+.link_b{
+	color: #000000;
+	text-decoration: none;
+}
+.link_w:hover, .link_g:hover, .link_b:hover{
+	text-decoration: underline;
+}
+.button_disabled{
+	color: #888888;
+}
+.button_enabled{
+	color: #000000;
+}
+.img_b2px{
+	border: 0;
+	padding: 2px;
+	background-color: #ffffff;
+}
+.img_b3px{
+	border: 0;
+	padding: 3px;
+	background-color: #ffffff;
+}
+.select_100px{
+	width: 100px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.clearer{
+	clear: both;
+}
