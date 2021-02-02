@@ -222,7 +222,13 @@ echo microtime(1) - $timestart.': Sending news<br />';
 
 		// Cleanup
 echo microtime(1) - $timestart.': Cleanup<br />';
-		$sql = "TRUNCATE log_sales_tick";
+		$sql = "CREATE TABLE log_sales_tick_new LIKE log_sales_tick";
+		$db->query($sql);
+		
+		$sql = "DROP TABLE log_sales_tick";
+		$db->query($sql);
+
+		$sql = "RENAME TABLE log_sales_tick_new TO log_sales_tick";
 		$db->query($sql);
 		
 		// Summarize event
