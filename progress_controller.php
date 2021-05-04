@@ -1,4 +1,4 @@
-<?php require 'include/prehtml.php'; ?>
+<?php require_once 'include/prehtml.php'; ?>
 <?php require_active_firm(); ?>
 <?php
 if(!isset($_POST['action'])){
@@ -273,9 +273,12 @@ else if($action == 'cancel_queue'){
 		if($qr_starttime < $timenow) $slot_affected = 1;
 		$qr_endtime = $queue_item_res["endtime"];
 		$qr_totaltime = $qr_endtime - $qr_starttime;
+		// Time remaining until research is complete including everything before it
 		$qr_remaining = $qr_endtime - $timenow;
-		$qr_remaining_rel = min($qr_endtime - $qr_starttime, $qr_remaining);
-		if($qr_remaining_rel < 1){
+		// Time remaining to be spent on actual research
+		$qr_remaining_rel = min($qr_totaltime, $qr_remaining);
+		// Prevent cancellation of researches that have already started AND finished
+		if($qr_remaining < 1){
 			echo '{"success" : 1, "slot" : '.$slot.', "refund" : 0}';
 			exit();
 		}
