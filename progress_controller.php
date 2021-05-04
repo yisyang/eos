@@ -284,7 +284,7 @@ else if($action == 'cancel_queue'){
 		}
 		// Calculate research refund, based on
 		// res_cost * (0.5 + 0.5 * remaining/totaltime)
-		$qr_research_refund = $qr_pid_res_cost * (0.5 + 0.5 * min(1,($qr_remaining / $qr_totaltime)));
+		$qr_research_refund = $qr_totaltime > 0 ? ($qr_pid_res_cost * (0.5 + 0.5 * min(1,($qr_remaining / $qr_totaltime)))) : 0;
 
 		// Delete from researching queue
 		$sql = "DELETE FROM queue_res WHERE id = '$queue_id'";
@@ -319,10 +319,12 @@ else if($action == 'cancel_queue'){
 		}
 
 		// Give research refund to firm
-		$sql = "INSERT INTO log_revenue (fid, is_debit, pid, pidq, value, source, transaction_time) VALUES ($eos_firm_id, 0, $qr_pid, $qr_newlevel, $qr_research_refund, 'Research', NOW())";
-		$db->query($sql);	
-		$sql = "UPDATE firms SET cash = cash + $qr_research_refund WHERE id='$eos_firm_id'";
-		$db->query($sql);
+		if ($qr_research_refund > 0) {
+			$sql = "INSERT INTO log_revenue (fid, is_debit, pid, pidq, value, source, transaction_time) VALUES ($eos_firm_id, 0, $qr_pid, $qr_newlevel, $qr_research_refund, 'Research', NOW())";
+			$db->query($sql);	
+			$sql = "UPDATE firms SET cash = cash + $qr_research_refund WHERE id='$eos_firm_id'";
+			$db->query($sql);
+		}
 
 		$resp = array('success' => 1, 'slot' => $slot, 'slot_affected' => $slot_affected, 'refund' => $qr_research_refund);
 		echo json_encode($resp);
